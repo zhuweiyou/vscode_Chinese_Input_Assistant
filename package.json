@@ -2,7 +2,7 @@
 	"name": "ChineseInputAssistant",
 	"displayName": "中文代码快速补全",
 	"description": "中文变量名方法名在拼音字母下提示并快速输入",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "CodeInChinese",
 	"engines": {
 		"vscode": "^1.38.0"
@@ -28,7 +28,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nobodxbodon/vscode_Chinese_Input_Assistant.git"
+		"url": "https://github.com/program-in-chinese/vscode_Chinese_Input_Assistant.git"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
