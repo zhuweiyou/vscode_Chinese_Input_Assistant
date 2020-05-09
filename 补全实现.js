@@ -1,6 +1,6 @@
 const vscode = require('vscode');
-const py = require('./转拼音')
-
+//const py = require('./转拼音')
+const bopomofo = require('./bopomofo')
 var 提示文本 = ["中文测试","文本","数据","中英结合abdc"];
 const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\^\&\*\(\)\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s？。，、；：？…—·ˉˇ¨“”～〃｜《》〔〕（），]+)/g;
 
@@ -16,12 +16,13 @@ function provideCompletionItems(document, position, token, context) {
 
     提示文本=  去重(代码内容.match(wordPattern)) ;
         return 提示文本.map(文本 => {
-                var 拼音=py.trans(文本)
+               // var 拼音=py.trans(文本)
+                var 拼音 = bopomofo.pinyin(文本, 2, false, true, '')
                 var item=new vscode.CompletionItem(                   
                     拼音  ,
                     vscode.CompletionItemKind.Text)
                  // 文本+'\t'+拼音 ,拼音+'\t'+文本
-                item.detail=文本
+                //item.detail=文本
                 item.sortText=拼音
                 item.filterText=拼音
                 item.label=文本+'\t'+拼音
@@ -31,7 +32,10 @@ function provideCompletionItems(document, position, token, context) {
         })
 
 }
-
+function 包含中文(str) {
+    if (/.*[\u4e00-\u9fa5]+.*$/.test(str)) return true;
+    return false;
+}
 /**
  * 光标选中当前自动补全item时触发动作，一般情况下无需处理
  * @param {*} item 
@@ -45,7 +49,7 @@ function 去重 (arr) {
     var ret=Array.from(new Set(arr))
 
     for (var i = 0; i < ret.length; i++) {
-        　　if ((!py.包含中文(ret[i]))||ret[i].length>20) {
+        　　if ((!包含中文(ret[i]))||ret[i].length>20) {
             ret.splice(i, 1);
         　　　　i--; 
         　　}
