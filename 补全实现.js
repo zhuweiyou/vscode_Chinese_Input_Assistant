@@ -17,15 +17,16 @@ function provideCompletionItems(document, position, token, context) {
     提示文本=  去重(代码内容.match(wordPattern)) ;
         return 提示文本.map(文本 => {
                 var 拼音=py.trans(文本)
-                var item=new vscode.CompletionItem(
-                    文本+'\t'+拼音 ,
+                var item=new vscode.CompletionItem(                   
+                    拼音  ,
                     vscode.CompletionItemKind.Text)
-           
+                 // 文本+'\t'+拼音 ,拼音+'\t'+文本
                 item.detail=文本
                 item.sortText=拼音
+                item.filterText=拼音
+                item.label=文本+'\t'+拼音
                 item.insertText=文本
                 return item;
-
 
         })
 
