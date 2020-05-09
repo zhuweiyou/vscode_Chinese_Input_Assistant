@@ -21,7 +21,7 @@ function trans(cc){
 			str+=cc.charAt(i);
 		}
 	}
-	return str+"|"+cc;
+	return str;
 }
 
 function 包含中文(str){
