@@ -1,5 +1,5 @@
-var window={};
-window.pinyins||(window.pinyins={"\u3007":"l\u00edng","\u4e00":"y\u012b","\u4e01":"d\u012bng,zh\u0113ng","\u4e02":"k\u01ceo,qi\u01ceo,y\u00fa","\u4e03":"q\u012b","\u4e04":"sh\u00e0ng","\u4e05":"xi\u00e0","\u4e06":"h\u01cen","\u4e07":"w\u00e0n,m\u00f2","\u4e08":"zh\u00e0ng","\u4e09":"s\u0101n","\u4e0a":"sh\u00e0ng,sh\u01ceng","\u4e0b":"xi\u00e0","\u4e0c":"q\u00ed,j\u012b","\u4e0d":"b\u00f9,f\u01d2u","\u4e0e":"y\u01d4,y\u00f9,y\u00fa","\u4e0f":"mi\u01cen","\u4e10":"g\u00e0i","\u4e11":"ch\u01d2u","\u4e12":"ch\u01d2u",
+var pinyins,polyphones,cht2chs
+pinyins={"\u3007":"l\u00edng","\u4e00":"y\u012b","\u4e01":"d\u012bng,zh\u0113ng","\u4e02":"k\u01ceo,qi\u01ceo,y\u00fa","\u4e03":"q\u012b","\u4e04":"sh\u00e0ng","\u4e05":"xi\u00e0","\u4e06":"h\u01cen","\u4e07":"w\u00e0n,m\u00f2","\u4e08":"zh\u00e0ng","\u4e09":"s\u0101n","\u4e0a":"sh\u00e0ng,sh\u01ceng","\u4e0b":"xi\u00e0","\u4e0c":"q\u00ed,j\u012b","\u4e0d":"b\u00f9,f\u01d2u","\u4e0e":"y\u01d4,y\u00f9,y\u00fa","\u4e0f":"mi\u01cen","\u4e10":"g\u00e0i","\u4e11":"ch\u01d2u","\u4e12":"ch\u01d2u",
 "\u4e13":"zhu\u0101n","\u4e14":"qi\u011b,j\u016b","\u4e15":"p\u012b","\u4e16":"sh\u00ec","\u4e17":"sh\u00ec","\u4e18":"qi\u016b","\u4e19":"b\u01d0ng","\u4e1a":"y\u00e8","\u4e1b":"c\u00f3ng","\u4e1c":"d\u014dng","\u4e1d":"s\u012b","\u4e1e":"ch\u00e9ng","\u4e1f":"di\u016b","\u4e20":"qi\u016b","\u4e21":"li\u01ceng","\u4e22":"di\u016b","\u4e23":"y\u01d2u","\u4e24":"li\u01ceng","\u4e25":"y\u00e1n","\u4e26":"b\u00ecng","\u4e27":"s\u00e0ng,s\u0101ng","\u4e28":"g\u01d4n","\u4e29":"ji\u016b","\u4e2a":"g\u00e8,g\u011b",
 "\u4e2b":"y\u0101","\u4e2c":"p\u00e1n","\u4e2d":"zh\u014dng,zh\u00f2ng","\u4e2e":"j\u01d0","\u4e2f":"ji\u00e8","\u4e30":"f\u0113ng","\u4e31":"gu\u00e0n,ku\u00e0ng","\u4e32":"chu\u00e0n","\u4e33":"ch\u01cen","\u4e34":"l\u00edn","\u4e35":"zhu\u00f3","\u4e36":"zh\u01d4","\u4e37":"b\u0101","\u4e38":"w\u00e1n","\u4e39":"d\u0101n","\u4e3a":"w\u00e8i,w\u00e9i","\u4e3b":"zh\u01d4","\u4e3c":"j\u01d0ng","\u4e3d":"l\u00ec,l\u00ed","\u4e3e":"j\u01d4","\u4e3f":"pi\u011b","\u4e40":"f\u00fa","\u4e41":"y\u00ed,j\u00ed",
 "\u4e42":"y\u00ec","\u4e43":"n\u01cei","\u4e44":"w\u01d4","\u4e45":"ji\u01d4","\u4e46":"ji\u01d4","\u4e47":"tu\u014d,zh\u00e9","\u4e48":"me,m\u00f3,ma,y\u0101o","\u4e49":"y\u00ec","\u4e4a":"y\u012b","\u4e4b":"zh\u012b","\u4e4c":"w\u016b","\u4e4d":"zh\u00e0","\u4e4e":"h\u016b","\u4e4f":"f\u00e1","\u4e50":"l\u00e8,yu\u00e8,y\u00e0o,l\u00e0o","\u4e51":"y\u00edn","\u4e52":"p\u012bng","\u4e53":"p\u0101ng","\u4e54":"qi\u00e1o","\u4e55":"h\u01d4","\u4e56":"gu\u0101i","\u4e57":"ch\u00e9ng,sh\u00e8ng","\u4e58":"ch\u00e9ng,sh\u00e8ng",
@@ -883,7 +883,8 @@ window.pinyins||(window.pinyins={"\u3007":"l\u00edng","\u4e00":"y\u012b","\u4e01
 "\u9f5b":"xi\u00e8","\u9f5c":"z\u012b","\u9f5d":"ch\u012b","\u9f5e":"y\u00e0n","\u9f5f":"j\u01d4","\u9f60":"ti\u00e1o","\u9f61":"l\u00edng","\u9f62":"l\u00edng","\u9f63":"ch\u016b","\u9f64":"qu\u00e1n","\u9f65":"xi\u00e8","\u9f66":"y\u00edn","\u9f67":"ni\u00e8","\u9f68":"ji\u00f9","\u9f69":"y\u01ceo","\u9f6a":"chu\u00f2","\u9f6b":"y\u01d4n","\u9f6c":"y\u01d4","\u9f6d":"ch\u01d4","\u9f6e":"y\u01d0","\u9f6f":"n\u00ed","\u9f70":"z\u00e9","\u9f71":"z\u014du","\u9f72":"q\u01d4","\u9f73":"y\u01d4n","\u9f74":"y\u01cen",
 "\u9f75":"y\u00fa","\u9f76":"\u00e8","\u9f77":"w\u00f2","\u9f78":"y\u00ec","\u9f79":"c\u012b","\u9f7a":"z\u014du","\u9f7b":"di\u0101n","\u9f7c":"ch\u01d4","\u9f7d":"j\u00ecn","\u9f7e":"y\u00e0","\u9f7f":"ch\u01d0","\u9f80":"ch\u00e8n","\u9f81":"h\u00e9","\u9f82":"y\u00edn,k\u011bn","\u9f83":"j\u01d4","\u9f84":"l\u00edng","\u9f85":"b\u0101o","\u9f86":"ti\u00e1o","\u9f87":"z\u012b","\u9f88":"y\u00edn,k\u011bn","\u9f89":"y\u01d4","\u9f8a":"chu\u00f2","\u9f8b":"q\u01d4","\u9f8c":"w\u00f2","\u9f8d":"l\u00f3ng,l\u01d2ng",
 "\u9f8e":"p\u00e1ng","\u9f8f":"g\u014dng,w\u00f2","\u9f90":"p\u00e1ng","\u9f91":"y\u01cen","\u9f92":"l\u00f3ng","\u9f93":"l\u00f3ng,l\u01d2ng","\u9f94":"g\u014dng","\u9f95":"k\u0101n","\u9f96":"d\u00e1","\u9f97":"l\u00edng","\u9f98":"d\u00e1","\u9f99":"l\u00f3ng","\u9f9a":"g\u014dng","\u9f9b":"k\u0101n","\u9f9c":"gu\u012b,j\u016bn,qi\u016b","\u9f9d":"qi\u016b","\u9f9e":"bi\u0113","\u9f9f":"gu\u012b,j\u016bn,qi\u016b","\u9fa0":"yu\u00e8","\u9fa1":"chu\u012b","\u9fa2":"h\u00e9","\u9fa3":"ji\u01ceo",
-"\u9fa4":"xi\u00e9","\u9fa5":"yu\u00e8"});window.polyphones||(window.polyphones={"\u963f\u8a07":"\u0101,h\u014dng","\u963f\u7f57\u6c49":"\u0101,lu\u00f3,h\u00e0n","\u963f\u6728\u6797":"\u0101,m\u00f9,l\u00edn","\u963f\u59e8":"\u0101,y\u00ed","\u963f\u54e5":"\u0101,g\u0113","\u963f\u4e09":"\u0101,s\u0101n","\u963f\u8c00":"\u0113,y\u00fa","\u963f\u9644":"\u0113,f\u00f9","\u963f\u80f6":"\u0113,ji\u0101o","\u963f\u5f25\u9640\u4f5b":"\u0113,m\u00ed,tu\u00f3,f\u00f3","\u4e86\u89e3":"li\u01ceo,ji\u011b","\u4e86\u5982\u6307\u638c":"li\u01ceo,r\u00fa,zh\u01d0,zh\u01ceng",
+"\u9fa4":"xi\u00e9","\u9fa5":"yu\u00e8"}
+polyphones={"\u963f\u8a07":"\u0101,h\u014dng","\u963f\u7f57\u6c49":"\u0101,lu\u00f3,h\u00e0n","\u963f\u6728\u6797":"\u0101,m\u00f9,l\u00edn","\u963f\u59e8":"\u0101,y\u00ed","\u963f\u54e5":"\u0101,g\u0113","\u963f\u4e09":"\u0101,s\u0101n","\u963f\u8c00":"\u0113,y\u00fa","\u963f\u9644":"\u0113,f\u00f9","\u963f\u80f6":"\u0113,ji\u0101o","\u963f\u5f25\u9640\u4f5b":"\u0113,m\u00ed,tu\u00f3,f\u00f3","\u4e86\u89e3":"li\u01ceo,ji\u011b","\u4e86\u5982\u6307\u638c":"li\u01ceo,r\u00fa,zh\u01d0,zh\u01ceng",
 "\u4e00\u76ee\u4e86\u7136":"y\u012b,m\u00f9,li\u01ceo,r\u00e1n","\u4fe9\u4eba":"li\u01ce,r\u00e9n","\u4f60\u4eec\u4fe9":"n\u01d0,m\u0113n,li\u01ce","\u6211\u4eec\u4fe9":"w\u01d2,m\u0113n,li\u01ce","\u4ed6\u4eec\u4fe9":"t\u0101,m\u0113n,li\u01ce","\u5b50\u5f39":"z\u01d0,d\u00e0n","\u70ae\u5f39":"p\u00e0o,d\u00e0n","\u5f39\u836f":"d\u00e0n,y\u00e0o","\u8c03\u67e5":"di\u00e0o,ch\u00e1","\u58f0\u8c03":"sh\u0113ng,di\u00e0o","\u97f3\u4e50":"y\u012bn,yu\u00e8","\u4e50\u66f2":"yu\u00e8,q\u01d4","\u4e50\u5668":"yu\u00e8,q\u00ec",
 "\u4e50\u8c31":"yu\u00e8,p\u01d4","\u7f1d\u9699":"f\u00e8ng,x\u00ec","\u80f8\u812f":"xi\u014dng,p\u00fa","\u88c2\u7f1d":"li\u00e8,f\u00e8ng","\u5e72\u90e8":"g\u00e0n,b\u00f9","\u624d\u5e72":"c\u00e1i,g\u00e0n","\u5e72\u52b2":"g\u00e0n,j\u00ecn","\u9aa8\u5e72":"g\u01d4,g\u00e0n","\u7231\u597d":"\u00e0i,h\u00e0o","\u6076\u5fc3":"\u011b,x\u012bn","\u6328\u4e2a":"\u0101i,g\u00e8","\u6328\u8fd1":"\u0101i,j\u00ecn","\u6328\u6253":"\u00e1i,d\u01ce","\u6328\u8bf4":"\u00e1i,shu\u014d","\u62d7\u53e3":"\u00e0o,k\u01d2u",
 "\u6267\u62d7":"zh\u00ed,ni\u00f9","\u7fc5\u8180":"ch\u00ec,b\u01ceng","\u8180\u5b50":"b\u01ceng,zi","\u624b\u8180":"sh\u01d2u,b\u01ceng","\u86e4\u868c":"g\u00e9,b\u00e0ng","\u868c\u57e0":"b\u00e8ng,b\u00f9","\u8584\u5f31":"b\u00f3,ru\u00f2","\u7a00\u8584":"x\u012b,b\u00f3","\u5355\u8584":"d\u0101n,b\u00f3","\u6de1\u8584":"d\u00e0n,b\u00f3","\u5c16\u5634\u8584\u820c":"ji\u0101n,zu\u01d0,b\u00f3,sh\u00e9","\u539a\u8584":"h\u00f2u,b\u00e1o","\u7889\u5821":"di\u0101o,b\u01ceo","\u9a6c\u5bb6\u5821":"m\u01ce,ji\u0101,p\u00f9",
@@ -948,7 +949,8 @@ window.pinyins||(window.pinyins={"\u3007":"l\u00edng","\u4e00":"y\u012b","\u4e01
 "\u6d4e\u5357":"j\u01d0,n\u00e1n","\u516d\u5b89":"l\u00f9,\u0101n","\u6e11\u6c60":"mi\u01cen,ch\u00ed","\u5929\u59e5\u5c71":"ti\u0101n,m\u01d4,sh\u0101n","\u4e2d\u725f":"zh\u014dng,m\u00f9","\u851a\u53bf":"y\u00f9,xi\u00e0n","\u6d52\u5885\u5173":"x\u01d4,sh\u00f9,gu\u0101n","\u8398\u5e84":"x\u012bn,zhu\u0101ng","\u76d1\u5229":"ji\u00e0n,l\u00ec","\u6b59\u53bf":"sh\u00e8,xi\u00e0n","\u71d5\u5c71":"y\u0101n,sh\u0101n","\u5904\u65b9":"ch\u01d4,f\u0101ng","\u6252\u624b":"p\u00e1,sh\u01d2u","\u6252\u8349":"p\u00e1,c\u01ceo",
 "\u6570\u636e":"sh\u00f9,j\u00f9","\u65e0\u6570":"w\u00fa,sh\u00f9","\u6210\u90fd":"ch\u00e9ng,d\u016b","\u53cc\u91cd":"shu\u0101ng,ch\u00f3ng","\u91cd\u5408":"ch\u00f3ng,h\u00e9","\u91cd\u65b0":"ch\u00f3ng,x\u012bn","\u91cd\u6765":"ch\u00f3ng,l\u00e1i","\u91cd\u590d":"ch\u00f3ng,f\u00f9","\u91cd\u7533":"ch\u00f3ng,sh\u0113n","\u91cd\u9633":"ch\u00f3ng,y\u00e1ng","\u91cd\u9022":"ch\u00f3ng,f\u00e9ng","\u91cd\u6c93":"ch\u00f3ng,t\u00e0","\u91cd\u53e0":"ch\u00f3ng,di\u00e9","\u91cd\u9704":"ch\u00f3ng,xi\u0101o",
 "\u91cd\u5531":"ch\u00f3ng,ch\u00e0ng","\u91cd\u6d0b":"ch\u00f3ng,y\u00e1ng","\u91cd\u5ce6\u53e0\u5d82":"ch\u00f3ng,lu\u00e1n,di\u00e9,zh\u00e0ng","\u6210\u957f":"ch\u00e9ng,zh\u01ceng","\u8180\u80f1":"p\u00e1ng,gu\u0101ng","\u8180\u80bf":"p\u0101ng,zh\u01d2ng","\u6d2a\u6d1e":"h\u00f3ng,d\u00f2ng","\u4e00\u64ae":"y\u012b,zu\u01d2,m\u00e1o","\u67aa\u6746":"qi\u0101ng,g\u01cen","\u70df\u6746":"y\u0101n,g\u01cen","\u4e1c\u6d8c":"d\u014dng,ch\u014dng","\u897f\u6d8c":"x\u012b,ch\u014dng","\u4e1c\u897f\u6d8c":"d\u014dng,x\u012b,ch\u014dng",
-"\u971e\u6d8c":"xi\u00e1,ch\u014dng","\u8475\u6d8c":"ku\u00ed,ch\u014dng","\u4f17\u884c":"zh\u00f2ngx\u00edng","\u51fa\u884c":"ch\u016b,x\u00edng","\u884c\u5458":"h\u00e1ng,yu\u0101n","\u98de\u884c\u5458":"f\u0113i,x\u00edng,yu\u0101n"});window.cht2chs||(window.cht2chs={"\u81fa":"\u53f0","\u842c":"\u4e07","\u8207":"\u4e0e","\u919c":"\u4e11","\u5c08":"\u4e13","\u696d":"\u4e1a","\u53e2":"\u4e1b","\u6771":"\u4e1c","\u7d72":"\u4e1d","\u4e1f":"\u4e22","\u5169":"\u4e24","\u56b4":"\u4e25","\u55aa":"\u4e27","\u500b":"\u4e2a","\u723f":"\u4e2c","\u8c50":"\u4e30","\u81e8":"\u4e34","\u70ba":"\u4e3a","\u9e97":"\u4e3d","\u8209":"\u4e3e","\u9ebc":"\u4e48","\u7fa9":"\u4e49","\u70cf":"\u4e4c","\u6a02":"\u4e50","\u55ac":"\u4e54","\u7fd2":"\u4e60",
+"\u971e\u6d8c":"xi\u00e1,ch\u014dng","\u8475\u6d8c":"ku\u00ed,ch\u014dng","\u4f17\u884c":"zh\u00f2ngx\u00edng","\u51fa\u884c":"ch\u016b,x\u00edng","\u884c\u5458":"h\u00e1ng,yu\u0101n","\u98de\u884c\u5458":"f\u0113i,x\u00edng,yu\u0101n"};
+cht2chs={"\u81fa":"\u53f0","\u842c":"\u4e07","\u8207":"\u4e0e","\u919c":"\u4e11","\u5c08":"\u4e13","\u696d":"\u4e1a","\u53e2":"\u4e1b","\u6771":"\u4e1c","\u7d72":"\u4e1d","\u4e1f":"\u4e22","\u5169":"\u4e24","\u56b4":"\u4e25","\u55aa":"\u4e27","\u500b":"\u4e2a","\u723f":"\u4e2c","\u8c50":"\u4e30","\u81e8":"\u4e34","\u70ba":"\u4e3a","\u9e97":"\u4e3d","\u8209":"\u4e3e","\u9ebc":"\u4e48","\u7fa9":"\u4e49","\u70cf":"\u4e4c","\u6a02":"\u4e50","\u55ac":"\u4e54","\u7fd2":"\u4e60",
 "\u9109":"\u4e61","\u66f8":"\u4e66","\u8cb7":"\u4e70","\u4e82":"\u4e71","\u722d":"\u4e89","\u65bc":"\u4e8e","\u8667":"\u4e8f","\u96f2":"\u4e91","\u4e99":"\u4e98","\u4e9e":"\u4e9a","\u7522":"\u4ea7","\u755d":"\u4ea9","\u89aa":"\u4eb2","\u893b":"\u4eb5","\u56b2":"\u4eb8","\u5104":"\u4ebf","\u50c5":"\u4ec5","\u5f9e":"\u4ece","\u4f96":"\u4ed1","\u5009":"\u4ed3","\u5100":"\u4eea","\u5011":"\u4eec","\u50f9":"\u4ef7","\u773e":"\u4f17","\u512a":"\u4f18","\u5925":"\u4f19","\u6703":"\u4f1a","\u50b4":"\u4f1b",
 "\u5098":"\u4f1e","\u5049":"\u4f1f","\u50b3":"\u4f20","\u50b7":"\u4f24","\u5000":"\u4f25","\u502b":"\u4f26","\u5096":"\u4f27","\u507d":"\u4f2a","\u4f47":"\u4f2b","\u9ad4":"\u4f53","\u50ad":"\u4f63","\u50c9":"\u4f65","\u4fe0":"\u4fa0","\u4fb6":"\u4fa3","\u50e5":"\u4fa5","\u5075":"\u4fa6","\u5074":"\u4fa7","\u50d1":"\u4fa8","\u5108":"\u4fa9","\u5115":"\u4faa","\u5102":"\u4fac","\u4fc1":"\u4fe3","\u5114":"\u4fe6","\u513c":"\u4fe8","\u5006":"\u4fe9","\u5137":"\u4fea","\u5109":"\u4fed","\u50b5":"\u503a",
 "\u50be":"\u503e","\u50af":"\u506c","\u50c2":"\u507b","\u50e8":"\u507e","\u511f":"\u507f","\u513b":"\u50a5","\u5110":"\u50a7","\u5132":"\u50a8","\u513a":"\u50a9","\u5152":"\u513f","\u514c":"\u5151","\u5157":"\u5156","\u9ee8":"\u515a","\u862d":"\u5170","\u95dc":"\u5173","\u8208":"\u5174","\u8332":"\u5179","\u990a":"\u517b","\u7378":"\u517d","\u56c5":"\u5181","\u5167":"\u5185","\u5ca1":"\u5188","\u518a":"\u518c","\u5beb":"\u5199","\u8ecd":"\u519b","\u8fb2":"\u519c","\u585a":"\u51a2","\u99ae":"\u51af",
@@ -1038,11 +1040,192 @@ window.pinyins||(window.pinyins={"\u3007":"l\u00edng","\u4e00":"y\u012b","\u4e01
 "\u9d1b":"\u9e33","\u9d2c":"\u9e34","\u9d15":"\u9e35","\u9de5":"\u9e36","\u9dd9":"\u9e37","\u9d2f":"\u9e38","\u9d30":"\u9e39","\u9d42":"\u9e3a","\u9d34":"\u9e3b","\u9d43":"\u9e3c","\u9d3f":"\u9e3d","\u9e1e":"\u9e3e","\u9d3b":"\u9e3f","\u9d50":"\u9e40","\u9d53":"\u9e41","\u9e1d":"\u9e42","\u9d51":"\u9e43","\u9d60":"\u9e44","\u9d5d":"\u9e45","\u9d52":"\u9e46","\u9df3":"\u9e47","\u9d5c":"\u9e48","\u9d61":"\u9e49","\u9d72":"\u9e4a","\u9d93":"\u9e4b","\u9d6a":"\u9e4c","\u9da4":"\u9e4d","\u9d6f":"\u9e4e",
 "\u9d6c":"\u9e4f","\u9d6e":"\u9e50","\u9d89":"\u9e51","\u9d8a":"\u9e52","\u9d77":"\u9e53","\u9deb":"\u9e54","\u9d98":"\u9e55","\u9da1":"\u9e56","\u9d9a":"\u9e57","\u9dbb":"\u9e58","\u9dbf":"\u9e5a","\u9da5":"\u9e5b","\u9da9":"\u9e5c","\u9dca":"\u9e5d","\u9dc2":"\u9e5e","\u9db2":"\u9e5f","\u9db9":"\u9e60","\u9dba":"\u9e61","\u9dc1":"\u9e62","\u9dbc":"\u9e63","\u9db4":"\u9e64","\u9dd6":"\u9e65","\u9e1a":"\u9e66","\u9dd3":"\u9e67","\u9dda":"\u9e68","\u9def":"\u9e69","\u9de6":"\u9e6a","\u9df2":"\u9e6b",
 "\u9df8":"\u9e6c","\u9dfa":"\u9e6d","\u9e07":"\u9e6f","\u9df9":"\u9e70","\u9e0c":"\u9e71","\u9e0f":"\u9e72","\u9e1b":"\u9e73","\u9e18":"\u9e74","\u9e7a":"\u9e7e","\u9ea5":"\u9ea6","\u9ea9":"\u9eb8","\u9ec3":"\u9ec4","\u9ecc":"\u9ec9","\u9ef6":"\u9ee1","\u9ef7":"\u9ee9","\u9ef2":"\u9eea","\u9efd":"\u9efe","\u9eff":"\u9f0b","\u9f02":"\u9f0c","\u9f09":"\u9f0d","\u9780":"\u9f17","\u9f34":"\u9f39","\u9f47":"\u9f44","\u9f4a":"\u9f50","\u9f4f":"\u9f51","\u9f52":"\u9f7f","\u9f54":"\u9f80","\u9f55":"\u9f81",
-"\u9f57":"\u9f82","\u9f5f":"\u9f83","\u9f61":"\u9f84","\u9f59":"\u9f85","\u9f60":"\u9f86","\u9f5c":"\u9f87","\u9f66":"\u9f88","\u9f6c":"\u9f89","\u9f6a":"\u9f8a","\u9f72":"\u9f8b","\u9f77":"\u9f8c","\u9f8d":"\u9f99","\u9f94":"\u9f9a","\u9f95":"\u9f9b","\u9f9c":"\u9f9f"});function pinyin(b,g,h,l,e){g=void 0==g||null==g?g=0:g;h=void 0==h||null==h?h=!1:h;l=void 0==l||null==l?l=!1:l;e=void 0==e||null==e?" ":e;for(var k=[],f=[],c=0,d=0,n=b.length;d<n;){var a=b.substr(d,1),m=a.charCodeAt(0);if(40869<m||19968>m)k.push(a),f.push(0);else if(m=getPinyins(a),1==m.length)a=m[0],k.push(a),f.push(1);else if(1<m.length)if(a=getPolyphoneWord(b,a,d,c),null!=a){for(c=0;c<a.words.length;c++)k[d-a.offset+c]=a.words[c],f[d-a.offset+c]=2;c=d=d-a.offset+a.words.length-1}else a=m[0],k.push(a),
-f.push(1);else k.push(a),f.push(0);d++}return handlePinyin(k,f,g,h,l,e)}
-function handlePinyin(b,g,h,l,e,k){for(var f="",c=0;c<b.length;c++){var d=b[c],n=g[c],a="";if(1==n||2==n){if(1==h||2==h){n=-1;for(var m in d){var p,q=d[m];-1<(p="\u0101\u00e1\u01ce\u00e0\u0113\u00e9\u011b\u00e8\u012b\u00ed\u01d0\u00ec\u014d\u00f3\u01d2\u00f2\u016b\u00fa\u01d4\u00f9\u01d6\u01d8\u01da\u01dc".indexOf(q))?(n=p%4,p=parseInt(p/4),a+="aeiouv"[p]):a+=q}a+=1==h?n+1:""}else a=d;a=l?a.toUpperCase():e?capitalize(a):a;a=0<k.length&&0<f.length?k+a:a}else a=d;f+=a}return f}
-function getPolyphoneWord(b,g,h,l,e){e=[];var k=0,f;for(f in window.polyphones){var c=f.length,d=h-c;d=Math.max(l,d);-1<b.slice(d,Math.min(h+c,b.length)).indexOf(f)&&(c>k&&(k=c),d=f.indexOf(g),c={words:window.polyphones[f].split(","),offset:d,length:c},e.push(c))}if(1==e.length)return e[0];if(1<e.length)for(b=0;b<e.length;b++)if(e[b].length==k)return e[b];return null}function getPinyins(b){b=window.pinyins[b];var g=[];return b?b.split(","):g}
-function capitalize(b){if(0<b.length){var g=b.substr(0,1).toUpperCase();b=b.substr(1,b.length);return g+b}return b};
+"\u9f57":"\u9f82","\u9f5f":"\u9f83","\u9f61":"\u9f84","\u9f59":"\u9f85","\u9f60":"\u9f86","\u9f5c":"\u9f87","\u9f66":"\u9f88","\u9f6c":"\u9f89","\u9f6a":"\u9f8a","\u9f72":"\u9f8b","\u9f77":"\u9f8c","\u9f8d":"\u9f99","\u9f94":"\u9f9a","\u9f95":"\u9f9b","\u9f9c":"\u9f9f"};
+/**
+ * 将汉字句子转换拼音，支持声母带音调，数字音调，无音调三种格式
+ * @param {Object} words 句子
+ * @param {Object} toneType 拼音样式 0-声母带音调，1-数字音调在最后，2-无音调，默认值0
+ * @param {Object} upper 是否大写,默认为假（小写）
+ * @param {Object} cap 是否首字母大写,在upper为假时有效,默认为假（小写）
+ * @param {Object} split 分割符号，默认一个空格
+ * @return 拼音
+ */
+function pinyin(words, toneType, upper, cap, split) {
+	if(!words){
+		return "";
+	}
+	toneType = (toneType == undefined || toneType == null) ? toneType = 0 : toneType;
+	upper = (upper == undefined || upper == null) ? upper = false : upper;
+	cap = (cap == undefined || cap == null) ? cap = false : cap;
+	split = (split == undefined || split == null) ? ' ' : split;
+	var result = [];
+	//0为不需要处理，1为单音字，2为已处理的多音字
+	var types = [];
+	var lastPolyphoneIndex = 0;
+	for (var i = 0, len = words.length; i < len; ) {
+		var _char = words.substr(i, 1);
+		var unicode = _char.charCodeAt(0);
+		//如果unicode在符号，英文，数字或其他语系，则直接返回
+		if (unicode > 40869 || unicode < 19968) {
+			result.push(_char);
+			types.push(0);
+		} else {//如果是支持的中文，则获取汉字的所有拼音
+			var 拼音s = getPinyins(_char);
+			if(拼音s.length == 1){//单音字
+				var 拼音 = 拼音s[0];
+				result.push(拼音);
+				types.push(1);
+			}else if(拼音s.length > 1){//多音字，需要进行特殊处理
+				//
+				var data = getPolyphoneWord(words, _char, i, lastPolyphoneIndex);
+				if(data != null){
+					for (var k = 0; k < data.words.length; k++) {
+						result[i - data.offset + k] = data.words[k];
+						types[i - data.offset + k] = 2;
+					}
+					//修正偏移，有可能当前字是词组中非第一个字
+					i = i - data.offset + data.words.length - 1 ;
+					//最后处理过的多音字位置，以防止一个多音字词组有多个多音字，例如患难与共，难和共都是多音字
+					lastPolyphoneIndex = i;
+				}else{//没有找到多音字的词组，默认使用第一个发音
+					var 拼音 = 拼音s[0];
+					result.push(拼音);
+					types.push(1);
+				}
+			}else{//未发现
+				result.push(_char);
+				types.push(0);
+			}
+		}
+		i++;
+	}
+	return handlePinyin(result, types, toneType, upper, cap, split);
+}
+/**
+ * 进行拼音处理
+ * @param {Object} result
+ * @param {Object} types
+ * @param {Object} toneType
+ * @param {Object} upper
+ * @param {Object} cap
+ * @param {Object} split
+ */
+function handlePinyin(result, types, toneType, upper, cap, split){
+	//aeiouü
+	var vowelsz = "aeiouv";
+	var toneVowelsz = "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ";
+	var 拼音s = "";
+	for (var i = 0; i < result.length; i++) {
+		var 拼音 = result[i];
+		var type = types[i];
+		var 拼音1 = '';
+		if(type == 1 || type == 2){//如果是拼音或者多音字
+			if(toneType == 1 || toneType == 2){//如需要数字声调或者无声调
+				var tone = -1;//音调数字形式
+				for (let indexz = 0; indexz < 拼音.length; indexz++) {
+					var k = -1;
+					var wz = 拼音[indexz];					
+					//寻找在有声调声母中的位置
+					if(wz!=null){
+						if((k = toneVowelsz.indexOf(wz)) > -1){
+							tone = (k % 4);
+							//计算当前声母在无音调声母的位置
+							var pos = parseInt(k / 4);
+							拼音1+=vowelsz[pos];
+						}else{
+							//原样
+							拼音1+=wz;
+						}
+					}
+					
+				}
+				//如果是带音调数字形式，则将音调添加到末尾
+				拼音1 = 拼音1 + (toneType == 1 ? tone + 1 : '');
+			}else{
+				拼音1 = 拼音;
+			}
+			if (upper) {
+				拼音1 = 拼音1.toUpperCase();
+			} else {
+				拼音1 = cap ? 首字母大写(拼音1) : 拼音1;
+			}
+			拼音1 = split.length > 0 && 拼音s.length > 0 ? split + 拼音1 : 拼音1;
+		}else{//如果不需要处理的非拼音
+			拼音1 = 拼音;
+		}
+		拼音s += 拼音1;
+	}
+	return 拼音s;
+}
+/**
+ * 获取多音字词，返回时返回替换起始位置和结束位置
+ * @param {Object} words 句子 
+ * @param {Object} current 当前字
+ * @param {Object} pos 当前汉字的位置
+ * @param {Object} type 拼音样式 0-声母带音调，1-音调在最后，2-无音调，默认值0
+ */
+function getPolyphoneWord(words, current, pos, lastPolyphoneIndex, type){
+	var pinyinSeparator = ","; // 拼音分隔符
+	var results = [];
+	var maxMatchLen = 0;
+	for(var w in polyphones){
+		var len = w.length;
+		var beginPos = pos - len;
+		beginPos = Math.max(lastPolyphoneIndex, beginPos);
+		var endPos = Math.min(pos + len, words.length);
+		var temp = words.slice(beginPos, endPos);
+		var index = -1;
+		if((index = temp.indexOf(w)) > -1){
+			if(len > maxMatchLen){
+				maxMatchLen = len;
+			}
+			//当前汉字在多音字词组的偏移位置，用于修正词组的替换
+			var offset = w.indexOf(current);
+			var data = {words: polyphones[w].split(pinyinSeparator), offset: offset, length: len};
+			results.push(data);
+		}
+	}
+	if(results.length == 1){
+		return results[0];
+	}else if(results.length > 1){//如果存在多个匹配的多音字词组，以最大匹配项为最佳答案,例如词库中有'中国人'和'中国',最理想的答案应该是最大匹配
+		for (var i = 0; i < results.length; i++) {
+			if(results[i].length == maxMatchLen){
+				return results[i];
+			}
+		}
+	}
+	return null;
+}
+/**
+ * 获取一个汉字的所有拼音
+ * @param {Object} hanzi 汉字
+ * @param {Object} type 0-声母带音调，1-音调在最后，2-无音调，默认值0
+ */
+function getPinyins(hanzi){
+	var pinyinSeparator = ","; // 拼音分隔符
+	var 拼音s = pinyins[hanzi];
+	var result = [];
+	if(!拼音s){//如果不存在拼音
+		return result;
+	}
+	var 拼音sArray = 拼音s.split(pinyinSeparator);
+	return 拼音sArray;
+}
+
+/**
+ * 单个汉字拼音，进行首字母大写
+ * @param {Object} 拼音 单个汉字拼音
+ */
+function 首字母大写(拼音){
+	if(拼音.length>0){
+		var first = 拼音.substr(0, 1).toUpperCase();
+		var spare = 拼音.substr(1, 拼音.length);
+		return first + spare;
+	}else{
+		return 拼音;
+	}
+}
+
 module.exports = {
 	pinyin
 }
