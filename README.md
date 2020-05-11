@@ -6,21 +6,35 @@
 支持各种编程语言，英文状态下输入拼音，匹配本行外任意位置的中文标识符。
 
 - C#
+
 ![演示](截图/演示_c.png)
 
 - Haskell
+
 ![演示](截图/演示_Haskell.png)
+
 - Java
+
 ![演示](截图/演示_Java.png)
+
 - JavaScript
+
 ![演示](截图/演示_JS.png)
+
 - Kotlin
+
 ![演示](截图/演示_Kotlin.png)
+
 - Python
+
 ![演示](截图/演示_Python.png)
+
 - Swift
+
 ![演示](截图/演示_Swift.png)
+
 - TypeScript
+
 ![演示](截图/演示_TS.png)
 
 ## 版本说明
