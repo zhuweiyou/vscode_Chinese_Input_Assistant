@@ -25,6 +25,12 @@
 
 ![演示](截图/演示_Kotlin.png)
 
+- PHP
+
+对 $ 开头的变量名，直接输入拼音即有提示：
+
+![演示](截图/演示_PHP.png)
+
 - Python
 
 ![演示](截图/演示_Python.png)
@@ -50,4 +56,4 @@
 
 ## 已知问题
 
-对 PHP 中 $ 打头的标识符[尚不支持](https://github.com/program-in-chinese/vscode_Chinese_Input_Assistant/issues/1)
+暂无
