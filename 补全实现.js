@@ -2,7 +2,7 @@ const vscode = require('vscode');
 //const py = require('./转拼音')
 const bopomofo = require('./bopomofo')
 var 提示文本 = ["中文测试","文本","数据","中英结合abdc"];
-const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\^\&\*\(\)\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s？。，、；：？…—·ˉˇ¨“”～〃｜《》〔〕（），]+)/g;
+const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\^\&\*\(\)\-\#\?\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s？。，、；：？…—·ˉˇ¨“”～〃｜《》〔〕（），]+)/g;
 
 function provideCompletionItems(document, position, token, context) {
 
