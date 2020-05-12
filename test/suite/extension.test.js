@@ -52,5 +52,6 @@ suite('Extension Test Suite', () => {
 		assert.deepEqual("1+数_1".match(标识符模式), ["1", "数_1"], "1+数_1");
 
 		assert.deepEqual("1+数$1".match(标识符模式), ["1", "数$1"], "1+数$1");
+		assert.deepEqual("1+$数1".match(标识符模式), ["1", "$数1"], "1+$数1");
 	});
 });
