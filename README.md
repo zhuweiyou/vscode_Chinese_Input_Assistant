@@ -45,6 +45,11 @@
 
 ## 版本说明
 
+### 1.0.3
+
+- PHP 支持说明
+- 修复标识符[识别 bug](https://github.com/program-in-chinese/vscode_Chinese_Input_Assistant/issues/8)
+
 ### 1.0.2
 
 - 调整待选项显示：中文在前
