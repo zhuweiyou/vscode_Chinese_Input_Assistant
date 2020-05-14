@@ -13,11 +13,13 @@ function provideCompletionItems(document, position, token, context) {
         if(i!=当前行)
         代码内容 += document.lineAt(i).text+"\n";
     }
-
+        var 提示方式=vscode.workspace.getConfiguration('中文代码快速补全').get("提示方式")
+       
     提示文本=  去重(代码内容.match(wordPattern)) ;
         return 提示文本.map(文本 => {
                // var 拼音=py.trans(文本)
                 var 拼音 = bopomofo.pinyin(文本, 2, false, true, '')
+                 if(提示方式!="全拼") 拼音 = bopomofo.双拼转换(拼音,提示方式)
                 var item=new vscode.CompletionItem(                   
                     拼音  ,
                     vscode.CompletionItemKind.Text)
