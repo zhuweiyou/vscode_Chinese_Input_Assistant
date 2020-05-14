@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 //const py = require('./转拼音')
 const bopomofo = require('./bopomofo')
+const 五笔 = require('./五笔')
 var 提示文本 = ["中文测试","文本","数据","中英结合abdc"];
 const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\^\&\*\(\)\-\#\?\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s？。，、；：？…—·ˉˇ¨“”～〃｜《》〔〕（），]+)/g;
 
@@ -17,9 +18,12 @@ function provideCompletionItems(document, position, token, context) {
        
     提示文本=  去重(代码内容.match(wordPattern)) ;
         return 提示文本.map(文本 => {
-               // var 拼音=py.trans(文本)
-                var 拼音 = bopomofo.pinyin(文本, 2, false, true, '')
-                 if(提示方式!="全拼") 拼音 = bopomofo.双拼转换(拼音,提示方式)
+        if(提示方式=="五笔"){
+            var 拼音 = 五笔.五笔(文本)  
+        }else{
+            var 拼音 = bopomofo.pinyin(文本, 2, false, true, '')     
+            if(提示方式!="全拼") 拼音 = bopomofo.双拼转换(拼音,提示方式)
+        }
                 var item=new vscode.CompletionItem(                   
                     拼音  ,
                     vscode.CompletionItemKind.Text)
