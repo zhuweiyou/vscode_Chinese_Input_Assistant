@@ -21,7 +21,20 @@
 				"command": "插件命令",
 				"title": "中文插件"
 			}
-		]
+		],
+		"configuration": {
+			"title": "中文代码快速补全",
+			"properties": {
+				"中文代码快速补全.提示方式": {
+					"type": "string",
+					"default": "全拼",
+					"enum": ["全拼", "拼音加加双拼", "小鹤双拼","搜狗双拼","微软双拼","自然码双拼","紫光双拼"],
+					"enumDescriptions": [
+
+					]
+				  }
+			}
+		  }
 	},
 	"scripts": {
 		"test": "node ./test/runTest.js"
