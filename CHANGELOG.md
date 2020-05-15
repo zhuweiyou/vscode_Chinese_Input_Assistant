@@ -1,8 +1,22 @@
-# Change Log
+## 各版本更新说明
 
-All notable changes to the "ztest" extension will be documented in this file.
+### 1.0.4
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- 五笔和双拼输入法处于 beta 状态，欢迎反馈！
+
+### 1.0.3
+
+- PHP 支持说明
+- 修复标识符[识别 bug](https://github.com/program-in-chinese/vscode_Chinese_Input_Assistant/issues/8)
+
+### 1.0.2
+
+- 调整待选项显示：中文在前
+- 改进多音字处理
+
+### 1.0.1
+
+“中文编程”知乎专栏文章：[中文代码快速补全 VS Code 插件尝鲜](https://zhuanlan.zhihu.com/p/138708196)
 
 ## [Unreleased]
 
