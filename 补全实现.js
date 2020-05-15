@@ -1,5 +1,4 @@
 const vscode = require('vscode');
-//const py = require('./转拼音')
 const bopomofo = require('./bopomofo')
 const 五笔 = require('./五笔输入法')
 var 提示文本 = ["中文测试","文本","数据","中英结合abdc"];
@@ -25,10 +24,8 @@ function provideCompletionItems(document, position, token, context) {
             if(提示方式!="全拼") 拼音 = bopomofo.双拼转换(拼音,提示方式)
         }
                 var item=new vscode.CompletionItem(                   
-                    拼音  ,
+                    拼音,
                     vscode.CompletionItemKind.Text)
-                 // 文本+'\t'+拼音 ,拼音+'\t'+文本
-                //item.detail=文本
                 item.sortText=拼音
                 item.filterText=拼音
                 item.label=文本+'\t'+拼音
