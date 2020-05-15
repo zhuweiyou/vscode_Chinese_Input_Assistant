@@ -18,8 +18,8 @@ function provideCompletionItems(document, position, token, context) {
        
     提示文本=  去重(代码内容.match(wordPattern)) ;
         return 提示文本.map(文本 => {
-        if(提示方式=="五笔"){
-            var 拼音 = 五笔.五笔(文本)  
+        if(["五笔98全码", "五笔98四码"].includes(提示方式)){
+            var 拼音 = 五笔.五笔(文本, 提示方式)  
         }else{
             var 拼音 = bopomofo.pinyin(文本, 2, false, true, '')     
             if(提示方式!="全拼") 拼音 = bopomofo.双拼转换(拼音,提示方式)

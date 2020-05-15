@@ -1894,7 +1894,7 @@ var 五笔98={
 :"wwgs","僜":"wwgu","儉":"wwgw","倹":"wwgw","睂":"wwhh","伱":"wwiy","价":"wwjh","谾":"wwka","䜫":"wwka","卻":"wwkb","郤":"wwkb","谹":"wwkc","䜱":"wwkc","豀"
 :"wwkd","豅":"wwkd","豂":"wwke","䜰":"wwkf","谷":"wwkf","鹆":"wwkg","谻":"wwkg","䜮":"wwkg","㑖":"wwkh","螸":"wwkj","谽":"wwkk","豄":"wwkm","䜬":"wwkm","慾"
 :"wwkn","䜲":"wwkn","鵒":"wwko","䜯":"wwko","逧":"wwkp","谺":"wwkt","豃":"wwkt","䜪":"wwkv","谼":"wwkw","欲":"wwkw","㞃":"wwky","佡":"wwmh","仉":"wwn","怂":"wwnu",
-"㐽":"wwry","偑":"wwtj","仌":"wwu","份":"wwvt","傘":"wwwf","侳":"wwwf","䁞":"wwwh","㫺":"wwwj","俗":"wwwk","众":"wwwu","人":"Rwwww","㐺":"wwwy","伦":"wwxn","从"
+"㐽":"wwry","偑":"wwtj","仌":"wwu","份":"wwvt","傘":"wwwf","侳":"wwwf","䁞":"wwwh","㫺":"wwwj","俗":"wwwk","众":"wwwu","人":"wwww","㐺":"wwwy","伦":"wwxn","从"
 :"wwy","仈":"wwy","㑺":"wwyb","伶":"wwyc","倠":"wwyg","傖":"wwyk","僋":"wwym","仱":"wwyn","儁":"wwyn","㑫":"wwyn","僬":"wwyo","㺸":"wwyy","仑":"wxb","倾":"wxdm","傾"
 :"wxdm","㒩":"wxej","㑃":"wxet","㑰":"wxey","华":"wxfj","僶":"wxg","伄":"wxhh","佛":"wxjh","货":"wxmu","貨":"wxmu","化":"wxn","㒙":"wxrh","儗":"wxth","發":"wxwc",
 "㔇":"wxwj","仳":"wxxn","偕":"wxxr","僟":"wxxw","㑄":"wxy","隽":"wybr","邻":"wycb","䨇":"wycc","俼":"wyce","㒟":"wyce","鸰":"wycg","刢":"wycj","領":"wycm","领"
@@ -2057,17 +2057,29 @@ var 五笔98={
 :"yywf","誶":"yywf","詃":"yyxy","譶":"yyyf","言":"yyyy"
 }
 
-function 五笔(文字){
+function 五笔(文字, 提示方式){
 	if(!文字)return "";
 	var 键码="";
+	var 非汉字字符计数 = 0
 	for (var i = 0, len = 文字.length; i < len;i++ ) {
 		var _char = 文字.substr(i, 1);
 		var unicode = _char.charCodeAt(0);
 		//如果unicode在符号，英文，数字或其他语系，则直接返回
 		if (unicode > 40869 || unicode < 19968) {
 			键码+=_char
-		} else {//如果是支持的中文，则获取汉字的所有拼音
+			非汉字字符计数++
+		} else if (提示方式 == "五笔98全码") {//如果是支持的中文，则获取汉字的所有拼音
 			键码+=首字母大写(五笔98[_char])
+		} else if (提示方式 == "五笔98四码") {
+			if (文字.length - 非汉字字符计数 == 1) {
+				键码+=五笔98[_char]
+			} else if (文字.length - 非汉字字符计数 == 2) {
+				键码+=五笔98[_char].slice(0, 2)
+			} else if (文字.length - 非汉字字符计数 == 3) {
+				键码+=五笔98[_char].slice(0, i - 非汉字字符计数 < 2 ? 1 : 2)
+			} else if (文字.length - 非汉字字符计数 >= 4 && (i - 非汉字字符计数 < 3 || i + 1 - 非汉字字符计数 == 文字.length)) {
+				键码+=五笔98[_char].slice(0, 1)
+			}
 		}
 	}
 	return 键码;
