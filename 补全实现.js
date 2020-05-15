@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 //const py = require('./转拼音')
 const bopomofo = require('./bopomofo')
-const 五笔 = require('./五笔')
+const 五笔 = require('./五笔输入法')
 var 提示文本 = ["中文测试","文本","数据","中英结合abdc"];
 const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\^\&\*\(\)\-\#\?\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s？。，、；：？…—·ˉˇ¨“”～〃｜《》〔〕（），]+)/g;
 
