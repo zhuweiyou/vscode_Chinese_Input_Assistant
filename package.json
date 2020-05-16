@@ -28,13 +28,21 @@
 				"中文代码快速补全.提示方式": {
 					"type": "string",
 					"default": "全拼",
-					"enum": ["全拼","五笔98全码", "五笔98四码","小鹤双拼","搜狗双拼","微软双拼","自然码双拼","紫光双拼","拼音加加双拼"],
-					"enumDescriptions": [
-
-					]
-				  }
+					"enum": [
+						"全拼",
+						"五笔98全码",
+						"五笔98四码",
+						"小鹤双拼",
+						"搜狗双拼",
+						"微软双拼",
+						"自然码双拼",
+						"紫光双拼",
+						"拼音加加双拼"
+					],
+					"enumDescriptions": []
+				}
 			}
-		  }
+		}
 	},
 	"scripts": {
 		"test": "node ./test/runTest.js"
@@ -42,6 +50,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/program-in-chinese/vscode_Chinese_Input_Assistant.git"
+	},
+	"dependencies": {
+		"wubi-code-data": "1.0.1"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -54,5 +65,4 @@
 		"typescript": "^3.3.1",
 		"vscode-test": "^1.2.0"
 	}
-
 }
