@@ -1265,6 +1265,14 @@ const 双拼方案={
 		en: 'w',		ia: 'x',		ie: 'd',		in: 'y',		iu: 'j',		ou: 'z',		ua: 'x',		Ch: 'A',
 		Sh: 'I',		ue: 'n',		ui: 'n',		un: 'm',		uo: 'o',		ve: 'n',		Ei: 'Ok',		En: 'Ow',
 		Zh: 'U',		Er: 'Oj',		Ou: 'Oz',		E: 'Oe',		e: 'e',		o: 'o',		u: 'u',		v: 'v',		i: 'i',
+	},
+	智能ABC:{
+		ei: 'q', ian: 'w', ch: 'e', iu: 'r', er: 'r', iang: 't', uang: 't', ing: 'y', uo: 'o', uan: 'p',
+		zh: 'a', ong: 's', iong: 's', ia: 'd', ua: 'd', en: 'f', eng: 'g', ang: 'h', an: 'j', ao: 'k', ai: 'l',
+		iao: 'z', ie: 'x', in: 'c', uai: 'c', sh: 'v', ve: 'v', ou: 'b', un: 'n', ue: 'm', ui: 'm',
+		Ang: 'Oh', An: 'Oj', Ao: 'Ok', Ai: 'Ol', A: 'Oa', 
+		Ou: 'Ob',
+		E: 'Oe', Ei: 'Oq', En: 'Of', Eng: 'Og', Er: 'Or',
 	}
 }
 
